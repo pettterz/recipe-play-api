@@ -4,6 +4,7 @@ lazy val root = (project in file("."))
     name := """play-scala-starter-example""",
     version := "1.0-SNAPSHOT",
     scalaVersion := "2.13.6",
+    herokuJdkVersion in Compile := "11",
     libraryDependencies ++= Seq(
       guice,
 //      "com.h2database" % "h2" % "1.4.199",

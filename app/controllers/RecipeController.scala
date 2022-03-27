@@ -10,7 +10,7 @@ import play.api.libs.json.Format.GenericFormat
 import play.api.libs.json.OFormat.oFormatFromReadsAndOWrites
 import play.api.libs.json._
 import play.api.mvc.{Action, _}
-import service.RecipeService
+import services.RecipeService
 import play.api.data.format.Formats.dateFormat
 
 import java.util.Calendar
@@ -32,6 +32,10 @@ class RecipeController @Inject()(cc: ControllerComponents, recipeService: Recipe
   implicit val format = dateFormat("yyyy-MM-dd H:mm:ss")
 
 
+  /**
+   * List all
+   * @return
+   */
   def index: Action[AnyContent] = Action.async { implicit request =>
     logger.trace("index: ")
 
@@ -42,6 +46,11 @@ class RecipeController @Inject()(cc: ControllerComponents, recipeService: Recipe
     }
   }
 
+  /**
+   * Show entry
+   * @param id
+   * @return
+   */
   def show(id: Long): Action[AnyContent] = Action.async {
     implicit request =>
       logger.trace(s"show: id = $id")
@@ -58,6 +67,10 @@ class RecipeController @Inject()(cc: ControllerComponents, recipeService: Recipe
       })
   }
 
+  /**
+   * Post to create
+   * @return
+   */
   def create: Action[AnyContent] = Action.async { implicit request =>
     DisplayRecipeForm.form.bindFromRequest().fold(
       errorFrom => {
@@ -98,6 +111,11 @@ class RecipeController @Inject()(cc: ControllerComponents, recipeService: Recipe
     )
   }
 
+  /**
+   * Update entry
+   * @param id
+   * @return
+   */
   def update(id: Long): Action[AnyContent] = Action.async { implicit request =>
     DisplayRecipeForm.form.bindFromRequest().fold(
       errorFrom => {
@@ -139,6 +157,11 @@ class RecipeController @Inject()(cc: ControllerComponents, recipeService: Recipe
     )
   }
 
+  /**
+   * Delete entry
+   * @param id
+   * @return
+   */
   def delete(id: Long): Action[AnyContent] = Action.async { implicit request =>
     logger.trace("delete: ")
     recipeService.delete(id).map(res => {
