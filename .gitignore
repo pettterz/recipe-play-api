@@ -2,3 +2,4 @@
 .idea
 target
 logs
+conf/application_back.conf
