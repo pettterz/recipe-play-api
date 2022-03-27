@@ -1,0 +1,4 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/yang/Documents/GitHub/recipe-play-api/conf/logback.xml,/Users/yang/Documents/GitHub/recipe-play-api/target/scala-2.13/classes/logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/yang/Documents/GitHub/recipe-play-api/conf/application.conf,/Users/yang/Documents/GitHub/recipe-play-api/target/scala-2.13/classes/application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(/Users/yang/Documents/GitHub/recipe-play-api/conf/routes,/Users/yang/Documents/GitHub/recipe-play-api/target/scala-2.13/classes/routes)[0m
